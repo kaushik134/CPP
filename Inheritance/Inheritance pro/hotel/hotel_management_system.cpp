@@ -4,8 +4,8 @@ using namespace std;
 class customer
 {
 public:
-    string name;
-    int ano, mo, cmember, count = 0, acount = 0;
+    string name,mo,ano;
+    int  cmember, count = 0, acount = 0;
     char from_date[20], to_date[20];
     void cgetdata()
     {
@@ -17,11 +17,7 @@ public:
     {
         cout << "\n Enter Mobile Number :";
         cin >> mo;
-        while (mo != 0)
-        {
-            mo = mo / 10;
-            count++;
-        }
+        count=mo.length();
         // cout<<"\n count = "<<count;
         if (count < 10 || count > 10)
         {
@@ -31,24 +27,19 @@ public:
         }
         else
         {
-            room();
+            aadhar();
         }
+    }
+    void m(){
+        cout << "\n Mobile No. : "<<mo;
     }
     void aadhar()
     {
         cout << "\n Enter Customer Aadhar Number : ";
         cin >> ano;
-        while (ano != 0)
-        {
-            ano = ano / 10;
-            acount++;
-        }
-        cout << "\n count = " << acount;
+        acount=ano.length();
         if (acount == 12)
         {
-            // cout<<"\n Please Enter Valid Aadhar No.";
-            // acount=0;
-            // aadhar();
             room();
         }
         else
@@ -110,7 +101,8 @@ public:
 class Card : public Room, public customer
 {
 public:
-    int ch, upi, credit, debit, as = 1500, ns = 1000, ab = 2500, nb = 2000;
+    int ch, credit, debit, as = 1500, ns = 1000, ab = 2500, nb = 2000;
+    string upi;
     void card()
     {
         cout << "\n 1.UPI";
@@ -219,8 +211,8 @@ public:
     void output()
     {
         cout << "\n Name : " << name;
-        cout << "\n Mobile No. : " << mo;
-        // cout << "\n Aadhar No. : " << ano;
+        m();
+        cout << "\n Aadhar No. : " << ano;
         cout << "\n Total Member : " << cmember;
         rs();
         cout<<"\n Payment Done!!!";
@@ -244,8 +236,6 @@ int main()
             case 1:
             {
                 y.cgetdata();
-                // y.mobile();
-                // y.room();
                 y.BookRoom();
                 break;
             }
@@ -268,7 +258,7 @@ int main()
             case 5:
             {
                 cout<<"\n Thank you for your visit :(";
-                exit;
+                return 0;
             }
         }
     }
