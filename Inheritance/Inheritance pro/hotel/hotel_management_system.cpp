@@ -68,6 +68,7 @@ public:
         if (croom >= 3)
         {
             cout << "\n Room IS Not Avlaible:(";
+            exit(0);
         }
     }
     void rgetdata()
@@ -224,11 +225,11 @@ int main()
     display y;
     while (1)
     {
+        cout<<"\n";
         cout << "\n 1.Customer Details";
-        cout << "\n 2.Provide Facilities";
-        cout << "\n 3.Payment Method";
-        cout << "\n 4.Display Details";
-        cout << "\n 5.Exit";
+        cout << "\n 2.Payment Method";
+        cout << "\n 3.Display Details";
+        cout << "\n 0.Exit";
         cout<<"\n Enter Your Chooice : ";
         cin>>d;
         switch(d)
@@ -237,28 +238,28 @@ int main()
             {
                 y.cgetdata();
                 y.BookRoom();
-                break;
-            }
-            case 2:
-            {
                 y.rgetdata();
                 y.rs();
                 break;
             }
-            case 3:
+            case 2:
             {
                 y.card();
                 break;
             }
-            case 4:
+            case 3:
             {
                 y.output();
                 break;
             }
-            case 5:
+            case 0:
             {
                 cout<<"\n Thank you for your visit :(";
                 return 0;
+            }
+            default:
+            {
+                cout<<"\n Please Enter Correct Chooice!!!";
             }
         }
     }
