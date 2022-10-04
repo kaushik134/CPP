@@ -4,8 +4,8 @@ using namespace std;
 class customer
 {
 public:
-    string name,mo,ano;
-    int  cmember, count = 0, acount = 0;
+    string name, mo, ano;
+    int cmember, count = 0, acount = 0;
     char from_date[20], to_date[20];
     void cgetdata()
     {
@@ -17,7 +17,7 @@ public:
     {
         cout << "\n Enter Mobile Number :";
         cin >> mo;
-        count=mo.length();
+        count = mo.length();
         // cout<<"\n count = "<<count;
         if (count < 10 || count > 10)
         {
@@ -30,14 +30,15 @@ public:
             aadhar();
         }
     }
-    void m(){
-        cout << "\n Mobile No. : "<<mo;
+    void m()
+    {
+        cout << "\n Mobile No. : " << mo;
     }
     void aadhar()
     {
         cout << "\n Enter Customer Aadhar Number : ";
         cin >> ano;
-        acount=ano.length();
+        acount = ano.length();
         if (acount == 12)
         {
             room();
@@ -216,7 +217,7 @@ public:
         cout << "\n Aadhar No. : " << ano;
         cout << "\n Total Member : " << cmember;
         rs();
-        cout<<"\n Payment Done!!!";
+        cout << "\n Payment Done!!!";
     }
 };
 int main()
@@ -225,42 +226,42 @@ int main()
     display y;
     while (1)
     {
-        cout<<"\n";
+        cout << "\n";
         cout << "\n 1.Customer Details";
         cout << "\n 2.Payment Method";
         cout << "\n 3.Display Details";
         cout << "\n 0.Exit";
-        cout<<"\n Enter Your Chooice : ";
-        cin>>d;
-        switch(d)
+        cout << "\n Enter Your Chooice : ";
+        cin >> d;
+        switch (d)
         {
-            case 1:
-            {
-                y.cgetdata();
-                y.BookRoom();
-                y.rgetdata();
-                y.rs();
-                break;
-            }
-            case 2:
-            {
-                y.card();
-                break;
-            }
-            case 3:
-            {
-                y.output();
-                break;
-            }
-            case 0:
-            {
-                cout<<"\n Thank you for your visit :(";
-                return 0;
-            }
-            default:
-            {
-                cout<<"\n Please Enter Correct Chooice!!!";
-            }
+        case 1:
+        {
+            y.cgetdata();
+            y.BookRoom();
+            y.rgetdata();
+            y.rs();
+            break;
+        }
+        case 2:
+        {
+            y.card();
+            break;
+        }
+        case 3:
+        {
+            y.output();
+            break;
+        }
+        case 0:
+        {
+            cout << "\n Thank you for your visit :(";
+            return 0;
+        }
+        default:
+        {
+            cout << "\n Please Enter Correct Chooice!!!";
+        }
         }
     }
 }
