@@ -23,17 +23,17 @@ class Loan : public Bank
 {
 protected:
     int amount;
-    float intrest, rate=10, year=1;
+    float intrest, rate, year;
 
 public:
     void cal()
     {
         cout << "\n Enter Loan Amount : ";
         cin >> amount;
-        // cout << "\n Enter Rate : ";
-        // cin >> rate;
-        // cout << "\n Enter Time : ";
-        // cin >> year;
+        cout << "\n Enter Rate : ";
+        cin >> rate;
+        cout << "\n Enter Time : ";
+        cin >> year;
         intrest = amount * (rate/100) * year;
     }
 };

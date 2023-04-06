@@ -23,7 +23,7 @@ public:
 class person : public Bank
 {
 protected:
-    int balance = 0, amount, with, dep;
+    int  balance,amount, with, dep;
 
 public:
     person()

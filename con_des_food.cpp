@@ -102,7 +102,7 @@ int main()
 {
     Food hotel;
     int ch;
-    while(1)
+    while(2)
     {
         hotel.menu();
         cout<<"\n Enter Chooice : ";

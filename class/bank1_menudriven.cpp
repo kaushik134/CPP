@@ -2,11 +2,12 @@
 using namespace std;
 class Bank
 {
-    float amount, with, dep;
+    float amount=0, with, dep;
 
 public:
     void input()
     {
+        cout << "\n Your Balance Is :" << amount<<endl;
         cout << "\n Enter Your Amount : ";
         cin >> amount;
     }
